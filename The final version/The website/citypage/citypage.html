@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>SentraGrid - Smartcity</title>
+    <link rel="stylesheet" href="css/citypage.css">
+    <!-- <link rel = "stylesheet" , href = "css/css2.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body id="home-page">
+
+    <header id="site-header">
+        <div class="brand">
+            <img src="image/logo.png" alt="SentraGrid" class="logo">
+            <h1 class="city-name"> SentraGrid </h1>
+        </div>
+        <nav class="main-nav">
+            <a href="#home-page" class="nav-link home-page">Home</a>
+            <a href="#about" class="nav-link about">About</a>
+            <a href="#services" class="nav-link services">Services</a>
+            <a href="#smart-systems" class="nav-link smart-systems">Systems</a>
+            <a href="#contact" class="nav-link connect">Contact</a>
+
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2 class="about">About SentraGrid : </h2>
+            <p class="p-about">
+                SentraGrid is a visionary smart city nestled on the banks of the Nile,
+                officially launched in 2025. Designed for seamless living, it combines solar-powered rooftops,
+                autonomous-shuttle networks,
+                and real-time IoT sensors that monitor traffic, air quality, and energy use. Our mission is to blend
+                cutting-edge
+                technology with sustainable design, creating a safe, efficient, and green urban environment where every
+                resident can thrive.
+            </p>
+        </section>
+
+        <section id="services">
+            <h2>Our Services :</h2>
+            <ol>
+                <li>Mobiliy
+                    <ul>
+                        <li>Central E-Bike Station</li>
+                        <li>Autonomous Shuttle Loop A</li>
+                        <li>Smart Parking Garages</li>
+                        <li>Drone Delivery Hubs</li>
+                    </ul>
+                </li>
+                <li>Energy
+                    <ul>
+                        <li>Solar Rooftop Network</li>
+                        <li>Smart Grid Substation 1</li>
+                        <li>EV Fast-Charging Stations</li>
+                        <li>Battery Storage Facilities</li>
+                    </ul>
+                </li>
+                <li>Environment
+                    <ul>
+                        <li>Green Roof District Park</li>
+                        <li>Riverfront Urban Farm</li>
+                        <li>Air-Quality Monitoring Stations</li>
+                        <li>Water Recycling Plant</li>
+                    </ul>
+                </li>
+                <li>Education and Health
+                    <ul>
+                        <li>Tech Academy Campus</li>
+                        <li>Tele-medicine Pods</li>
+                        <li>Wellness Community Center</li>
+                        <li>Interactive Learning Labs</li>
+                    </ul>
+                </li>
+                <li>Digital Services
+                    <ul>
+                        <li>Online License Booking</li>
+                        <li>Real-time City Dashboard</li>
+                        <li>Citizen Feedback Portal</li>
+                        <li>Public Wi-Fi Kiosks</li>
+
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section id="smart-systems">
+            <h2>Smart Systems</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Facility type</th>
+                        <th>description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Booking System</td>
+                        <td> a vehicle license registration and renewal booking system.</td>
+                    </tr>
+                    <tr>
+                        <td>Counting Car System</td>
+                        <td>Python-based car counting system for license renewal facility using ESP32</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Traffic System</td>
+                        <td>Uses sensors and AI to reduce congestion and improve flow.</td>
+                    </tr>
+                    <tr>
+                        <td>Intelligent Building Control</td>
+                        <td>Automates lighting, HVAC, and security for efficient energy use.</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic Energy Grid</td>
+                        <td>Balances power supply using smart meters and renewable sources.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="page-navigation">
+            <a href="#home-page" class="work-link">Home Page</a>
+        </div>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i>Email : <a href="mailto:sentragrid@gmail.com"
+                        class="contact-detail-link"> sentragrid@gmail.com</a></p> <br>
+                <p><i class="fas fa-phone"></i>Phone Number : <a href="tel:01126284763" class="contact-detail-link">
+                        01126284763</a></p>
+            </div>
+            <form class="contact-form">
+                <label for="feedback-area">Your feedback or Questions : </label>
+                <textarea id="feedback-area" name="feedback" row="5"
+                    placeholder="Enter your message name..."></textarea>
+            </form>
+            <div class="deci-link">
+                <a href="https://deci.gov.eg/" target="_blank" id="deci-link">Learn more about smart cities with
+                    DECI</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2025 SentraGrid. All rights reserved
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Reveal on scroll logic
+        const revealElements = document.querySelectorAll('.hidden-on-load');
+
+        function revealOnScroll() {
+            const windowHeight = window.innerHeight;
+
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('reveal');
+                }
+            });
+        }
+
+        // Call on scroll and on page load
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // So it runs immediately
+    </script>
+</body>
+
+</html>

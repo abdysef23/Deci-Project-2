@@ -1,0 +1,298 @@
+:root {
+    --primary-dark: #0B0F1A;
+    --secondary-dark: #101625;
+    --primary-teal: #009e9e;
+    --bright-teal: #00f0e0;
+    --text-light: #F0F0EB;
+    --accent-gray: #2f2f35;
+    --translucent-teal: #00f0e080;
+    --header-height: 70px;
+    --content-padding: 2rem; /* 32 pixels*/
+}
+/* Basic reset & general sysles */
+
+*,
+*::before,
+*::after{
+ box-sizing: border-box;
+ margin : 0;
+ padding :0;   
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    background-color : var(--primary-dark);
+    font-family : 'Nunito', sans-serif;
+    color: var(--text-light);
+    line-height : 1.7;
+    font-size: 16px
+} 
+/* Header Styling */
+
+header{
+    background-color :var(--secondary-dark) ;
+    padding : 0 var(--content-padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width : 100%;
+    height : var(--header-height);
+    position : sticky;
+    top : 0;
+    border-bottom: 2px solid var(--primary-teal);
+}
+.brand{
+    display : flex;
+    align-items : center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.brand .logo {
+    height : 40px;
+    width : 40px;
+    transition: transform 0.3s ease;
+    margin-right: 1rem;
+    border: 2px solid var(--primary-teal);   /** radius border */
+    border-radius: 50%;
+    padding: 4px;
+    background-color: white;
+}
+
+.brand .city-name {
+    font-size: 1.8rem;
+    color : var(--primary-teal);
+    transition: transform 0.3s ease;
+}
+.main-nav{
+    display : flex;
+    align-items : center;
+}
+
+.main-nav a {
+    text-decoration : none;
+    margin-left: 1.5rem;
+    color : var(--primary-teal);
+    font-weight : 700;
+    transition: all 0.3 ease;
+    position : relative;
+    padding: 5px 0;
+    
+}
+
+.main-nav a::after
+ {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: var(--bright-teal);
+    transition: width 0.3s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover{
+    color: var(--bright-teal);
+    outline: none;
+
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+.brand .logo:hover  {
+    transform: scale(1.1);
+}
+.brand .city-name:hover {
+    transform : scale(1.1);
+}
+
+/* Main Content Styling */
+
+main{
+    max-width : 1100px;
+    padding : var(--content-padding);
+    margin-left : auto;
+    margin-right : auto;
+}
+section{
+    padding-top: 2rem;
+    margin-bottom : 2.5rem;
+    
+}
+h2{
+    font-size : 2.2rem;
+    margin-bottom : 1.75rem;
+    color : var(--primary-teal);
+    padding-bottom : 0.75rem;
+    border-bottom : 2px solid var(--accent-gray)
+}
+
+p , li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+ul , ol {
+    padding-left: 25px;
+    margin-bottom:0.5rem;   
+}
+
+li {
+    margin-top : 0.5rem;
+}
+
+ul ul , ol ol {
+    margin-top : 0.5rem;
+    margin-bottom : 0.5rem;
+}
+
+table {
+    align-items : left;
+    width : 100%;
+    margin: 1rem , 0 ;
+    border : 1px solid var(--bright-teal);
+    border-collapse : collapse;
+    background-color : var(--secondary-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+th , td{
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--accent-gray);
+    border-left : 0.5px solid var(--accent-gray);
+    text-align : left;
+    
+}
+thead {
+    background-color : var(--accent-gray);
+    color: var(--bright-teal);
+}
+tr:nth-child(even) td {
+    background-color: rgba(47, 47, 53, 0.5);
+}
+tr:hover td {
+    background-color: var(--primary-teal);
+    color: var(--primary-dark);
+}
+
+.work-link{
+    display: inline-block;
+    text-decoration : none;
+    color : var(--primary-teal);
+    font-weight: 700;
+    padding : 12px 25px;
+    border : 2px solid var(--primary-teal);
+    border-radius : 5px;
+    transition: backgound-color 0.3s ease , color 0.3s ease , transform 0.2s ease;
+}
+.work-link:hover{
+    color: var(--primary-dark) ;
+    background-color : var(--primary-teal);
+    transform: translateY(-2px);
+    outline: none;
+}
+.page-navigation{
+    display: flex;
+    justify-content : center;
+}
+#contact .contact-info {
+    margin-bottom: 0rem;
+}
+#contact .contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: -0.7rem;
+}
+#contact .contact-info .fas {
+    margin-right: 12px;
+    color: var(--bright-teal);
+    width: 20px;
+    text-align: center;
+}
+.contact-detail-link {
+    text-decoration : none;
+    color : var(--text-light);
+    transition : color 0.3s ease;
+}
+
+.contact-detail-link:hover {
+    color : var(--bright-teal);
+    text-decoration: underline;
+}
+
+/* #feedback-area {
+} */
+
+.contact-form {
+    margin-top : 2rem;
+}
+
+.contact-form label { 
+    display : block;
+    margin-bottom : 0.5rem;
+    font-weight : bold;
+}
+
+.contact-form #feedback-area {
+    width : 100%;
+    max-width : 600px;
+    height : 200px;
+    padding : 12px;
+    background-color : var(--secondary-dark);
+    border : 1px solid var(--accent-gray);
+    color : var(--text-light);
+    font-size : 1rem;
+    border-radius: 4px;
+    font-family: 'Nunito', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom : 1rem;
+}
+#feedback-area:focus{
+    outline: none;
+    border-color : var(--primary-teal);
+    box-shadow: 0 0 0 3px rgba(0, 158, 158, 0.3);
+}
+
+#deci-link {
+    text-decoration : none;
+    display : inline-block;
+    margin-top : 2.5rem;
+    border : 1px solid var(--primary-teal);
+    border-radius: 4px;
+    color : var(--primary-teal);
+    font-weight : 700;
+    padding : 12px 20px;
+    transition : color 0.3s ease , backgound-color 0.3s ease ;
+}
+#deci-link:hover {
+    background-color : var(--primary-teal);
+    color : var(--primary-dark);
+}
+
+.deci-link {
+    display : flex;
+    justify-content : center;
+
+}
+footer { 
+    display : flex;
+    justify-content : center;
+    background-color : var(--secondary-dark) ;
+
+    height : var(--header-height)
+}
+/* section {
+    padding-top: 58px;
+    margin-top: -58px;
+    } */
+footer {
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    color :var(--translucent-teal);
+    
+}
