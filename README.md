@@ -1,2 +1,2 @@
 # Deci-Project-2
-This is the project of Digital Egyptian Cups Initiative
+Is this the project of the Digital Egyptian Cups Initiative Level 2
